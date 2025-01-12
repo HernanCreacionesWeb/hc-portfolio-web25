@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="icon" href="imagenes/logofav.png" type="image/x-icon">
+     <!-- Bootstrap CSS -->
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contacto.css">
+    <style>
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function(){
+        emailjs.init("PHWpnDkO3Jo6taZbr"); // Reemplaza YOUR_PUBLIC_KEY con tu Public Key de EmailJS
+    })();
+</script>
+
+</head>
+<body>
+    
+
+<!-- Nueva sección de contacto -->
+<div id="contacto" class="container mt-5 text-center">
+    <h1 class="encabezado">Contacto</h1>
+    <h5 class="encabezado">Comunicate dejando tus datos o a través de mis redes.</h5>
+    <form id="contact-form" class="contact-form">
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre/ Empresa</label>
+            <input type="text" class="form-control" id="nombre" name="user_name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Tu correo</label>
+            <input type="email" class="form-control" id="email" name="user_email" placeholder="tucorreo@ejemplo.com">
+          </div>
+          <div class="mb-3">
+            <label for="mensaje" class="form-label">Tu mensaje</label>
+            <textarea class="form-control" id="mensaje" name="message" rows="3"></textarea>
+          </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-primary" id="successModalLabel">Mensaje enviado con éxito</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Gracias por comunicarte. Responderé pronto.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- redes -->
+ <div class="container redes mt-1">
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <a href="https://www.instagram.com/ac_creadordigital/profilecard/?igsh=MnJlMWpsYjBheGY1" target="_blank">
+                    <img src="imagenes/instagram.svg" class="icon-size img-fluid" alt="Instagram">
+                </a>
+            </div>
+            <div class="col">
+                <a href="https://wa.me/2616655143" target="_blank">
+                    <img src="imagenes/whatsapp.svg" class="icon-size img-fluid" alt="WhatsApp">
+                </a>
+            </div>
+            <div class="col">
+                <a href="https://www.linkedin.com/in/hernan-cruz-216741343/" target="_blank">
+                    <img src="imagenes/linkedIn.svg" class="icon-size img-fluid" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+      </div>
+ </div>
+
+
+
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+      document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+          emailjs.sendForm('service_9iidu1n', 'template_qa4haq7', this)
+              .then(function() {
+                  $('#successModal').modal('show');
+              }, function(error) {
+                  alert('Error al enviar el mensaje: ' + JSON.stringify(error));
+              });
+      });
+  </script>
+</body>
+</html>

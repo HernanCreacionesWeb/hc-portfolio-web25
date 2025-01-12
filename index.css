@@ -1,0 +1,44 @@
+.banner {
+    background: linear-gradient(to right, #757373, #ffffff, #818181);
+    padding: 20px;
+    border-radius: 10px;
+}
+.banner img {
+    border-radius: 50%;
+    width: 50% !important;
+    height: 150px !important;
+    margin-left: 90px !important;
+    
+
+}
+
+
+.txt{
+    font-weight: 600;
+}
+
+/*tecnologias*/
+.tec{
+    background: linear-gradient(to right, #757373, #ffffff, #818181);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.icon-height {
+    height: 50px;
+
+}
+
+.icon-spacing {
+    margin-top: 10px; /* Ajusta este valor según tus necesidades */
+    margin-bottom: 10px; /* Ajusta este valor según tus necesidades */
+}
+@media (min-width: 992px) {
+    .banner {
+        padding: 10px;
+    }
+    .banner img {
+        width: 75%;
+        height: 200px  ;
+    }
+}

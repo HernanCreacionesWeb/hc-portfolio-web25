@@ -1,0 +1,63 @@
+.glow {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e7c3e7, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #9be9f3, 0 0 40px #ecb0ec, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff;
+    }
+}
+
+.description {
+    text-align: center;
+    font-size: 1.2em;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    color: #eeeded;
+}
+
+.description.visible {
+    opacity: 1;
+}
+
+
+
+.cards{
+    display: flex;
+ 
+}
+.card{
+    margin-bottom: 3%;
+    background: linear-gradient(to right, #91c3e4, #4c81f3, #818181) !important; 
+}
+.card-body{
+    background: linear-gradient(to right, #91c3e4, #4c81f3, #818181) !important;  
+}
+
+
+.card-dispo{
+    background: linear-gradient(to right, #b83625, #f5de5e, #ec3030) !important; 
+    margin-bottom: 3%;
+ }
+
+ .dispo{
+    background: linear-gradient(to right, #b83625, #f5de5e, #ec3030) !important; 
+ }
+
+@media (max-width: 768px) {
+    .cards{
+        display:   inline-table;
+        width: 100%;
+       
+    }
+    .card{
+        margin-bottom: 3%;
+        background: linear-gradient(to right, #757373, #ffffff, #818181) !important; 
+    }
+}
